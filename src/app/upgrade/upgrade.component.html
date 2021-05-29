@@ -1,0 +1,49 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header card-header-danger">
+                  <h4 class="card-title">Add Client</h4>
+                  <p class="card-category"></p>
+              </div>
+             
+                <div class="card-body">
+                    <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()">
+                        <div class="row">
+                           
+                            <div class="col-md-3">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Client Name" [(ngModel)]="this.ClientName" formControlName="ClientName" >
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput  placeholder="Client Email" type="text"  [(ngModel)]="this.ClientEmail" formControlName="ClientEmail" >
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Client Skype" type="text" [(ngModel)]="this.ClientSkype" formControlName="ClientSkype" >
+                              </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="ServerDetail"  type="text" [(ngModel)]="this.ServerDetail" formControlName="ServerDetail" >
+                          </mat-form-field>
+                            </div>
+                        </div>
+                      
+                        <button mat-raised-button type="submit" class="btn btn-danger pull-right">Save</button>
+                        <div class="clearfix"></div>
+                </form>
+                    
+                </div>
+              </div>
+          </div>
+         
+      </div>
+  </div>
+</div>
