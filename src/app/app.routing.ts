@@ -26,14 +26,14 @@ const routes: Routes =[
 // },
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'dashboard',canActivate : [AuthGuard],
     pathMatch: 'full',
   }, {
     path: '',
-    component: AdminLayoutComponent,
+    component: AdminLayoutComponent,canActivate : [AuthGuard],
     children: [{
       path: '',
-      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
+      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule',canActivate : [AuthGuard]
     }]
   },
 ];

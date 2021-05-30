@@ -3,9 +3,9 @@
     <h2 class="underlineHover"  routerLink="/login"  routerLinkActive="active"> Sign In </h2>
     <h2 class="underlineHover"  routerLink="/signup"  routerLinkActive="active">Sign Up </h2>
     <br>
-  <h2 class="inactive underlineHover">Project Management System</h2> 
+  <h2 class="inactive underlineHover">Smart System</h2> 
 <div>
-   <img src="assets/img/logo.png" id="icon" alt="User Icon" /> 
+   <img src="assets/img/logoo1.jpg" id="icon" alt="User Icon" /> 
 </div>
 <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
   <input type="text" name="email" #email="ngModel" [(ngModel)]="model.email" placeholder="Email" [pattern]="emailRegex" required

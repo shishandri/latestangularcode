@@ -21,7 +21,7 @@ export class UpgradeComponent implements OnInit {
  submitted = false;
  massage = null;  
  abc:any;
-dataSaved = false;
+ showSucessMessage :any;
 emp:any;
 form:any;
 kbc:any;
@@ -41,7 +41,7 @@ kbc:any;
      this.registerForm = this.FormBuilder.group(
        {
          ClientName: [""],
-         ClientEmail: [""],
+         ClientEmail: ["",[Validators.required]],
          ClientSkype: [""],
          ServerDetail: [""]
        },
@@ -76,7 +76,7 @@ kbc:any;
      if (this.id == null) {  
        this.Clientservice.createEmployee(this.registerForm.value).subscribe(  
          () => {  
-           this.dataSaved = true;  
+          //  this.dataSaved = true;  
         //   this.massage = 'Record saved Successfully';  
           //  this.refreshEmployeeList(); 
            this.employeeIdUpdate = null;  
@@ -93,8 +93,9 @@ kbc:any;
        employee.id=this.id;
        this.Clientservice.getStudentById(employee).subscribe(() => 
        {  
-         this.dataSaved = true;  
-    //    this.massage = 'Record Updated Successfully';  
+        this.showSucessMessage = true;
+        //  this.getprofile();
+        setTimeout(() => this.showSucessMessage = false, 4000);
     //     this.refreshEmployeeList(); 
          this.employeeIdUpdate = null; 
          this.router.navigate(['/upgrade']);
